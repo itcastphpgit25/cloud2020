@@ -1,0 +1,24 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: cloud-eureka-server7001
+
+eureka:
+  instance:
+    hostname: eureka7001.com #euerka服务端的实例名称
+  client:
+    register-with-eureka: false #false代表不向注册中心注册自己
+    fetch-registry: false #false代表自己短就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+       #单机
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #设置与eureka服务交互的地址查询服务和注册服务都需要依赖这个地址
+      #defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
+#  server:
+#    #关闭自我保护机制，保证不可用服务被及时清除
+#    enable-self-preservation: false
+#    #默认一定时间内没有接收到客户端服务实例的心跳，会进入保护模式，默认是90s
+#    eviction-interval-timer-in-ms: 2000
+
