@@ -3,20 +3,25 @@ server:
 
 spring:
   application:
-    name: cloud-config-client
+    name: config-client
   cloud:
     #客户端配置
     config:
       label: master  #分支名称
-      name: application #配置文件名称
+      name: config #配置文件名称
       profile: dev #读取后缀名称  上述3个总和：master分支上application-dev.yml的配置文件被读取，http://config-3344.com:3344/master/application-dev.yml
-      uri: http://localhost:3344 #配置中心地址
-
+      uri: http://config-3344.com:3344 #配置中心地址
+#rabbitMQ相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
   instance:
     instance-id: cloud-config-client3355
     prefer-ip-address: true

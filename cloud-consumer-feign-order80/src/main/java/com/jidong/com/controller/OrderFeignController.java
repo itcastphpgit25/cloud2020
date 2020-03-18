@@ -14,7 +14,7 @@ public class OrderFeignController {
     @Autowired
     private PaymentFeignService paymentFeignService;
 
-    @GetMapping(" ")
+    @GetMapping("/create/payment")
     public CommonResult<Payment> getPayment(@PathVariable("id")Long id){
 
         final CommonResult<Payment> result = paymentFeignService.select(id);

@@ -42,4 +42,11 @@ public class consumerController {
         return commonResult;
 
     }
+
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin(){
+        String result = restTemplate.getForObject("http://localhost:8001/get/zipkin",String.class);
+        return result;
+
+    }
 }

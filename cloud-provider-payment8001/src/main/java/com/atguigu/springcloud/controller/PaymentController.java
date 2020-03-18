@@ -86,4 +86,14 @@ public class PaymentController {
         return port;
     }
 
+    /**
+     *
+     * 测试zipkin
+     */
+    @GetMapping("/get/zipkin")
+    public String getZipKin(){
+
+        return "hello,zipkin,hahahahahha";
+    }
+
 }
