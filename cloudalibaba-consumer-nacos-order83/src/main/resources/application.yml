@@ -1,0 +1,24 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+#消费端将去访问的微服务名称
+server-url:
+  nacos-user-service: http://cloud-nacos-server
+
+#b暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+

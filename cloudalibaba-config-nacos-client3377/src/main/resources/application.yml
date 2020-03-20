@@ -1,0 +1,7 @@
+#Nacos注册配置，application.ym;
+spring:
+  profiles:
+    #active: info
+    #配置什么环境就加载什么
+    #active: test #表示测试环境
+    active: dev #表示开发环境
