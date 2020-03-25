@@ -1,0 +1,29 @@
+server:
+  port: 2003
+
+spring:
+  application:
+    name: seata-account-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alibaba:
+      seata:
+        tx-service-group: jd_tx_group
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_account
+    username: root
+    password: 123456
+
+logging:
+  level:
+    io:
+      seata: info
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.jd.springcloud.domain
+
+
+

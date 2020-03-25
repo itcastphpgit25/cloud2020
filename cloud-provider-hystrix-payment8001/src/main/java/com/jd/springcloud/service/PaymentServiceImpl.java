@@ -44,7 +44,7 @@ public class PaymentServiceImpl implements PaymentService {
     @HystrixCommand(fallbackMethod = "paymentCircuitBreaker_fallback",commandProperties = {
             @HystrixProperty(name = "circuitBreaker.enabled",value ="true" ), //是否开启断路器
             @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value ="10" ), //请求次数
-            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value ="10000" ),  //时间窗口期
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value ="15000" ),  //时间窗口期
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value ="60" ) //错误率达到多少后跳闸
     })
     public String paymentCircuitBreaker(Integer id){
